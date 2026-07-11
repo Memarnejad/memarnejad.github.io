@@ -1,0 +1,11 @@
+<div class="site-banner">
+  <div class="site-banner-content">
+    {% if page.banner %}
+      {{ page.banner }}
+    {% elsif page.url == '/' %}
+      This is home
+    {% else %}
+      This is other
+    {% endif %}
+  </div>
+</div>
