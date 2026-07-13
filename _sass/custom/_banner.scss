@@ -1,34 +1,123 @@
+/* ----------------------------------------------------------
+ * Banner
+ * ---------------------------------------------------------- */
+
+:root {
+  /* Responsive banner height */
+  /* Maximum width of banner content */
+  // --banner-content-width: 1200px;
+}
+
 .site-banner {
   width: 100%;
-  min-height: 100px;
+  // height: var(--banner-height);
+  min-height: 80px;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
-  margin-bottom: 2rem;
-  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 
-//   border-radius: 0.75rem;
+  /* Fallback background color */
+  background: #1f2937;
 
-  background: #2c3e50;
+  /* Uncomment if using a background image */
+  /*
+  background-image: url('/assets/img/banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  */
+}
+
+.site-banner::before {
+  /* Optional dark overlay for better text contrast */
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  pointer-events: none;
 }
 
 .site-banner-content {
-  font-size: 2rem;
-  font-weight: 600;
+  position: absolute;
+  z-index: 1;
+
+  width: min(92%, var(--banner-content-width));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  color: #fff;
+
+  color: white;
+
+  padding: 1rem;
 }
 
-@media (max-width: 768px) {
-  .site-banner {
-    min-height: 120px;
-    padding: 1rem;
-    border-radius: 0;
+.site-banner-content h1 {
+  margin: 0;
+
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.site-banner-content p {
+  margin-top: 1rem;
+
+  font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+/* Optional Persian font */
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+.site-banner.fa {
+  font-family: "Vazirmatn", sans-serif;
+  direction: rtl;
+}
+
+/* ----------------------------------------------------------
+ * Desktop layout integration
+ * ---------------------------------------------------------- */
+
+#sidebar {
+  top: var(--banner-height);
+  height: calc(100vh - var(--banner-height));
+}
+
+#main-wrapper {
+  // margin-top: var(--banner-height);
+}
+
+/* ----------------------------------------------------------
+ * Mobile
+ * ---------------------------------------------------------- */
+
+@media (max-width: 849px) {
+
+  :root {
+    --banner-height: clamp(140px, 22vh, 220px);
+  }
+
+  /* Sidebar becomes off-canvas on mobile */
+  #sidebar {
+    top: 0;
+    height: 100vh;
   }
 
   .site-banner-content {
-    font-size: 1.4rem;
+    width: 95%;
   }
 }
