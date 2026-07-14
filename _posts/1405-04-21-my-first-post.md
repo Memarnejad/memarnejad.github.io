@@ -1,6 +1,6 @@
 ---
 title: This is my first post
-author: cotes
+author: memarnejad
 categories: [Blogging, Tutorial]
 tags: [writing]
 render_with_liquid: false
