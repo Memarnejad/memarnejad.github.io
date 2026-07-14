@@ -5,6 +5,7 @@ categories: [Blogging, Tutorial]
 tags: [writing]
 render_with_liquid: false
 banner: "امام جواد (ع): اعتماد به خدا، بهای رسیدن به چیزهای گرانبها است"
+image: assets/img/seed.jpeg
 ---
 
 Welcome to my personal blog, a place where I share my thoughts, experiments, and discoveries. Here you can find articles about technology, programming, engineering, and the projects I am working on. My goal is to document my learning journey, explain interesting ideas, and create useful resources for anyone interested in exploring new concepts. Feel free to browse through the posts, explore different topics, and join me as I continue learning and building new things.
